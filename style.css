@@ -1,0 +1,116 @@
+:root {
+	--text-blue: hsl(238, 29%, 16%);
+	--text-dkblue: hsl(240, 6%, 50%);
+	--text-xdkblue: hsl(237, 12%, 33%);
+	--text-red: hsl(14, 88%, 65%);
+	--gradient-violet: hsl(273, 75%, 66%);
+	--gradient-blue: hsl(240, 73%, 65%);
+	--divider-blue: hsl(240, 5%, 91%);
+}
+html {
+	font-size: 100%;
+	box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+body {
+	min-height: 100vh;
+	background-image: linear-gradient(
+		to bottom,
+		var(--gradient-violet),
+		var(--gradient-blue)
+	);
+	margin: 0;
+	font-family: "Kumbh Sans", sans-serif;
+	padding: 3rem;
+	color: var(--text-blue);
+}
+
+.card {
+	position: relative;
+	background-color: #fefefe;
+	border-radius: 2rem;
+	max-width: 56rem;
+	margin: 3rem;
+	padding: 1rem;
+}
+
+.card_image {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-items: center;
+}
+
+.card_image img {
+	width: 100%;
+	height: auto;
+	margin-top: -49%;
+	/* overflow: hidden; */
+}
+
+.card_box {
+	display: block;
+	position: absolute;
+	top: 1%;
+	left: 30%;
+	z-index: 1;
+	transform: translate(-50%, -50%);
+	height: 100px;
+}
+
+.card_text {
+	padding-top: 3rem;
+}
+
+.accordian_question {
+	border: none;
+	background: transparent;
+	padding: 0;
+	font-size: 1rem;
+	font-family: inherit;
+}
+
+@media (min-width: 56em) {
+	.card {
+		display: flex;
+		margin: 8rem auto;
+		padding: 0rem;
+	}
+	.card_image,
+	.card_text {
+		flex: 1;
+	}
+	.card_text {
+		padding: 0rem;
+	}
+	.card_image {
+		position: relative;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+	}
+	.card_image img {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		top: 56%;
+
+		transform: translateX(-4rem);
+		max-width: 25rem;
+	}
+
+	.card_box {
+		display: block;
+		position: absolute;
+		top: 52%;
+		left: 0;
+		z-index: 1;
+		transform: translate(-50%, -50%);
+	}
+}
